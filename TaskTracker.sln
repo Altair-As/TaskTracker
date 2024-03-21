@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34714.143
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskTracker.Server", "TaskTracker.Server\TaskTracker.Server.csproj", "{81387DCD-B836-425D-994E-3AC4086AA46E}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "tasktracker.client", "tasktracker.client\tasktracker.client.esproj", "{2A58E69F-CF17-4DE5-A793-50606025CA2B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{81387DCD-B836-425D-994E-3AC4086AA46E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81387DCD-B836-425D-994E-3AC4086AA46E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81387DCD-B836-425D-994E-3AC4086AA46E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81387DCD-B836-425D-994E-3AC4086AA46E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A58E69F-CF17-4DE5-A793-50606025CA2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A58E69F-CF17-4DE5-A793-50606025CA2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A58E69F-CF17-4DE5-A793-50606025CA2B}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{2A58E69F-CF17-4DE5-A793-50606025CA2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A58E69F-CF17-4DE5-A793-50606025CA2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A58E69F-CF17-4DE5-A793-50606025CA2B}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {46E43560-AD87-4CC1-BC48-1F24414148A4}
+	EndGlobalSection
+EndGlobal
