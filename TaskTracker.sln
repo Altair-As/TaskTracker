@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34714.143
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskTracker.Server", "TaskTracker.Server\TaskTracker.Server.csproj", "{81387DCD-B836-425D-994E-3AC4086AA46E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskTracker.Server", "TaskTracker.Server\TaskTracker.Server.csproj", "{81387DCD-B836-425D-994E-3AC4086AA46E}"
 EndProject
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "tasktracker.client", "tasktracker.client\tasktracker.client.esproj", "{2A58E69F-CF17-4DE5-A793-50606025CA2B}"
 EndProject

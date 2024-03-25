@@ -5,6 +5,8 @@ using Microsoft.IdentityModel.Tokens;
 using Swashbuckle.AspNetCore.Filters;
 using System.Text;
 using TaskTracker.Server.Data;
+using TaskTracker.Server.Interfaces;
+using TaskTracker.Server.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -58,6 +60,9 @@ builder.Services.AddAuthentication(options =>
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]!))
     };
 });
+
+// Scope services
+builder.Services.AddScoped<IUserAccount, UserAccountService>();
 
 var app = builder.Build();
 

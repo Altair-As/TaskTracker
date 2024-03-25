@@ -6,6 +6,6 @@ namespace TaskTracker.Server.Data
     public class ApplicationUser : IdentityUser
     {
         public int EmployeeId { get; set; }
-        public Employee Employee { get; set; }
+        public Employee ? Employee { get; set; }
     }
 }
