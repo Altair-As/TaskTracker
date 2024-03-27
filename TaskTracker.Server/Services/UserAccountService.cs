@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
@@ -11,17 +12,25 @@ using static TaskTracker.Server.DataTranferObjects.ServerResponses;
 
 namespace TaskTracker.Server.Services
 {
-    public class UserAccountService(UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager, IConfiguration configuration) : IUserAccount
+    public class UserAccountService(
+        UserManager<ApplicationUser> userManager, 
+        RoleManager<IdentityRole> roleManager, 
+        AppDbContext context,
+        IConfiguration configuration) : IUserAccount
     {
         public async Task<GeneralResponse> CreateAccount(RegisterDTO registerDTO)
         {
             if (registerDTO == null) return new GeneralResponse(false, "Model is empty");
 
+            var employee = await context.Employees.FirstOrDefaultAsync(emp => emp.Email ==  registerDTO.Email);
+            if (employee is null) return new GeneralResponse(false, "Employee not found");
+
             var newUser = new ApplicationUser()
             {
                 UserName = registerDTO.Email,
                 Email = registerDTO.Email,
-                PasswordHash = registerDTO.Password
+                PasswordHash = registerDTO.Password,
+                EmployeeId = employee.Id
             };
 
             var user = await userManager.FindByEmailAsync(newUser.Email);

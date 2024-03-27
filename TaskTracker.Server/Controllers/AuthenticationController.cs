@@ -13,14 +13,30 @@ namespace TaskTracker.Server.Controllers
         public async Task<IActionResult> Register(RegisterDTO registerDTO)
         {
             var response = await userAccount.CreateAccount(registerDTO);
-            return Ok(response);
+
+            if (response.Flag)
+            {
+                return Ok(response);
+            }
+            else
+            {
+                return BadRequest(response);
+            }
         }
 
         [HttpPost("Login")]
         public async Task<IActionResult> Login(LoginDTO loginDTO)
         {
             var response = await userAccount.LoginAccount(loginDTO);
-            return Ok(response);
+
+            if (response.Flag)
+            {
+                return Ok(response);
+            }
+            else
+            {
+                return BadRequest(response);
+            }
         }
     }
 }
