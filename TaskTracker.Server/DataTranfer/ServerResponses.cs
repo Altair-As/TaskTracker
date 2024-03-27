@@ -1,4 +1,6 @@
-﻿namespace TaskTracker.Server.DataTranferObjects
+﻿using System.Text.Json.Serialization;
+
+namespace TaskTracker.Server.DataTranfer
 {
     public class ServerResponses
     {

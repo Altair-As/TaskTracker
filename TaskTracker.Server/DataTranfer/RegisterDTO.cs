@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace TaskTracker.Server.DataTranferObjects
+namespace TaskTracker.Server.DataTranfer
 {
     public class RegisterDTO
     {

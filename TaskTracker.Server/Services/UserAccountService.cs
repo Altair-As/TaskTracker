@@ -6,9 +6,8 @@ using System.Security.Claims;
 using System.Text;
 using TaskTracker.Server.Data;
 using TaskTracker.Server.DataTranfer;
-using TaskTracker.Server.DataTranferObjects;
 using TaskTracker.Server.Interfaces;
-using static TaskTracker.Server.DataTranferObjects.ServerResponses;
+using static TaskTracker.Server.DataTranfer.ServerResponses;
 
 namespace TaskTracker.Server.Services
 {
@@ -88,10 +87,10 @@ namespace TaskTracker.Server.Services
 
             var userClaims = new[]
             {
-                new Claim(ClaimTypes.NameIdentifier, session.Id.ToString()),
-                new Claim(ClaimTypes.Name, session.Name),
-                new Claim(ClaimTypes.Email, session.Email),
-                new Claim(ClaimTypes.Role, session.Role),
+                new Claim(ClaimTypes.NameIdentifier, session.Id!.ToString()),
+                new Claim(ClaimTypes.Name, session.Name!),
+                new Claim(ClaimTypes.Email, session.Email!),
+                new Claim(ClaimTypes.Role, session.Role!),
             };
 
             var token = new JwtSecurityToken(

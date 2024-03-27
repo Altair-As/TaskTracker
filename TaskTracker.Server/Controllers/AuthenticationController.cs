@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using TaskTracker.Server.DataTranferObjects;
+using TaskTracker.Server.DataTranfer;
 using TaskTracker.Server.Interfaces;
 
 namespace TaskTracker.Server.Controllers

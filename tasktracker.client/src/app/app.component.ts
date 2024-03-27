@@ -1,11 +1,18 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
-interface WeatherForecast {
-  date: string;
-  temperatureC: number;
-  temperatureF: number;
-  summary: string;
+interface Process {
+  id: number;
+  title: string;
+}
+
+interface Task {
+  id: number;
+  text: string;
+  description: string;
+  priority: number;
+  process: Process;
+  status: number;
 }
 
 @Component({
@@ -14,18 +21,18 @@ interface WeatherForecast {
   styleUrl: './app.component.css'
 })
 export class AppComponent implements OnInit {
-  public forecasts: WeatherForecast[] = [];
+  public tasks: Task[] = [];
 
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
-    this.getForecasts();
+    this.getTasks();
   }
 
-  getForecasts() {
-    this.http.get<WeatherForecast[]>('/weatherforecast').subscribe(
+  getTasks() {
+    this.http.get<Task[]>('https://localhost:7082/Tasks').subscribe(
       (result) => {
-        this.forecasts = result;
+        this.tasks = result;
       },
       (error) => {
         console.error(error);
@@ -33,5 +40,5 @@ export class AppComponent implements OnInit {
     );
   }
 
-  title = 'tasktracker.client';
+  title = 'realtimetasktracker.client';
 }

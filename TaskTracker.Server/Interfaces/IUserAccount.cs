@@ -1,5 +1,5 @@
-﻿using TaskTracker.Server.DataTranferObjects;
-using static TaskTracker.Server.DataTranferObjects.ServerResponses;
+﻿using TaskTracker.Server.DataTranfer;
+using static TaskTracker.Server.DataTranfer.ServerResponses;
 
 namespace TaskTracker.Server.Interfaces
 {
