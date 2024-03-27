@@ -13,6 +13,16 @@ var builder = WebApplication.CreateBuilder(args);
 // Add MVC controllers
 builder.Services.AddControllers();
 
+// Add CORS policy
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(policy =>
+    {
+        policy.WithOrigins("https://localhost:4200")
+        .WithMethods("GET", "POST", "PUT", "DELETE");
+    });
+});
+
 // Add SwaggerUI
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>
@@ -66,6 +76,8 @@ builder.Services.AddScoped<IUserAccount, UserAccountService>();
 
 var app = builder.Build();
 
+app.UseHttpsRedirection();
+
 app.UseDefaultFiles();
 app.UseStaticFiles();
 
@@ -76,7 +88,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
+app.UseCors();
 
 app.UseAuthentication();
 app.UseAuthorization();
