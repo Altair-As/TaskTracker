@@ -16,9 +16,9 @@
   </thead>
   <tbody>
     <tr *ngFor="let task of tasks">
-      <td>{{ task.text }}</td>
+      <td>{{ task.name }}</td>
       <td>{{ task.description }}</td>
-      <td>{{ task.process.title }}</td>
+      <td>{{ task.process.name }}</td>
       <td>{{ task.status }}</td>
       <td>{{ task.priority }}</td>
     </tr>

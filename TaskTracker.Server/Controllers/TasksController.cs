@@ -27,7 +27,7 @@ namespace TaskTracker.Server.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Models.Task>>> GetTasks()
         {
-            return await _context.Tasks.ToListAsync();
+            return await _context.Tasks.Include(task => task.Process).ToListAsync();
         }
 
 

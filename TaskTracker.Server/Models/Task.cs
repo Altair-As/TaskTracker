@@ -1,4 +1,6 @@
-﻿namespace TaskTracker.Server.Models
+﻿using System.Text.Json.Serialization;
+
+namespace TaskTracker.Server.Models
 {
     public class Task
     {
@@ -12,6 +14,7 @@
         public int ProcessId { get; set; }
         public Process ? Process { get; set; }
 
+        [JsonIgnore]
         public List<History> ? Histories { get; set; }
     }
 

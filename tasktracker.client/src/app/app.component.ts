@@ -3,16 +3,16 @@ import { Component, OnInit } from '@angular/core';
 
 interface Process {
   id: number;
-  title: string;
+  name: string;
 }
 
 interface Task {
   id: number;
-  text: string;
+  name: string;
   description: string;
+  status: number;
   priority: number;
   process: Process;
-  status: number;
 }
 
 @Component({
